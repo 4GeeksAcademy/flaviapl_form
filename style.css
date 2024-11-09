@@ -1,0 +1,10 @@
+
+#Amount {
+    position: relative;
+}
+
+.dollar {
+    position: absolute;
+    bottom: 20px;
+    left: -8px;
+}
