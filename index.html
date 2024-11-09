@@ -6,6 +6,7 @@
     <title>Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
     <div class="container border px-0 mt-5 rounded">
@@ -13,52 +14,52 @@
             <div class="fs-3 fw-semibold">Payment form example</div>
         </div>
         <div class="form">
-            <form>
+            <form method="POST" action="https://exampleURL.com">
                 <div class="mb-3">
                     <div class="alert alert-danger mx-3 mt-3 p-2 fw-semibold fs-6 ps-3" role="alert">         <!--ALERT-->        
                         Some fields are missing
                     </div>
-                <div class="container">
-                    <div class="row">
+                <div class="container pb-5">
+                    <div class="row pb-2">
                         <div class="col-5">                                                     <!--first line-->
                             <label for="cardNumber" class="form-label">Card #</label>
-                            <input type="card" class="form-control" id="cardNumber" aria-describedby="cardNumber" placeholder="XXXXXXXXXXXXXXXXXXXXX">
+                            <input type="text" class="form-control" id="cardNumber" aria-describedby="cardNumber" placeholder="XXXXXXXXXXXXXXXXXXXXX">
                             <div id="cardNumber" class="form-text"></div>
                         </div>
 
                         <div class="col-3">
                             <label for="CVC" class="form-label">CVC #</label>
-                            <input type="CVC" class="form-control" id="CVC" aria-describedby="CVC" placeholder="0000">
+                            <input type="text" class="form-control" id="CVC" aria-describedby="CVC" placeholder="0000">
                             <div id="CVC" class="form-text"></div>
                         </div>
 
                         <div class="col-4"> 
                             <label for="Amount" class="form-label">Amount #</label>
-                            <input type="Amount" class="form-control" id="Amount" aria-describedby="emailHelp" placeholder="Amount">
+                            <input type="text" class="form-control" id="Amount" aria-describedby="emailHelp" placeholder="Amount">
                             <div id="Amount" class="form-text">
                             <div class="dollar fw-bold">$</div>
                             </div>
                         </div>
-                  </div>
+                    </div>
 
-                    <div class="row">                                                                <!--second line-->
+                    <div class="row pb-2">                                                                <!--second line-->
                         <div class="col-6">
                             <label for="First Name" class="form-label">First Name</label>
-                            <input type="First Name" class="form-control" id="First Name" aria-describedby="First Name">
+                            <input type="text" class="form-control" id="First Name" aria-describedby="First Name">
                             <div id="First Name" class="form-text"></div>
                         </div>
 
                         <div class="col-6">
                             <label for="Last Name" class="form-label">Last Name</label>
-                            <input type="Last Name" class="form-control" id="Last Name" aria-describedby="Last Name">
+                            <input type="text" class="form-control" id="Last Name" aria-describedby="Last Name">
                             <div id="Last Name" class="form-text"></div>
                         </div>       
                     </div>
 
-                    <div class="row">
+                    <div class="row pb-2">
                         <div class="col-6">                                                     <!--third line-->
                             <label for="City" class="form-label">City</label>
-                            <input type="City" class="form-control" id="City" aria-describedby="City"">
+                            <input type="text" class="form-control" id="City" aria-describedby="City">
                             <div id="City" class="form-text"></div>
                         </div>
 
@@ -74,29 +75,64 @@
 
                         <div class="col-3">
                             <label for="Postal Code" class="form-label">Postal Code</label>
-                            <input type="Postal Code" class="form-control" id="Postal Code" aria-describedby="Postal Code">
+                            <input type="text" class="form-control" id="Postal Code" aria-describedby="Postal Code">
                             <div id="Postal Code" class="form-text"></div>
                         </div>
                     </div>
-                </div>                                                                                       
 
-
+                    <div class="row">                                                                <!--fourth line-->
+                        <div class="col-5">                                                           <!--credit cards radio options-->
+                            <label for="pay" class="form-label pb-2">We accept:</label>
+                            <div class="d-flex border bg-secondary w-50 p-1 rounded gap-4 me-5">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="pay1">
+                                    <label class="form-check-label" for="pay1">
+                                        <i class="fa-brands fa-cc-mastercard"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="pay2" checked>
+                                    <label class="form-check-label" for="pay2">
+                                        <i class="fa-brands fa-cc-visa"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="pay3">
+                                    <label class="form-check-label" for="pay3">
+                                        <i class="fa-brands fa-cc-diners-club"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="paymentMethod" id="pay4">
+                                    <label class="form-check-label" for="pay4">
+                                        <i class="fa-brands fa-cc-paypal"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                        <div class="col-6">
+                            <label for="Last Name" class="form-label">Message</label>                           <!--Textarea-->
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="Textarea"></textarea>
+                                <label for="Textarea"></label>
+                                <div class="text-body-secondary fw-semibold" id="smallText">Add any notes here.</div>
+                            </div>
+                        </div>       
+                    </div>
+                </div>                                 <!--container close-->                                                                      
 
                 <div class="container border px-0 rounded">                                                    <!--FORM FOOTER-->
                     <div class="formFooter text-bg-light p-2 me-2">
                         <div class="fs-3 fw-semibold d-flex justify-content-end gap-2">
                             <button type="submit" class="btn btn-secondary fw-medium">Cancel</button>
-                            <button type="submit" class="btn btn-primary fw-medium">Send</button>
+                            <button type="button" class="btn btn-primary fw-medium">Send</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-
-      
-
-    
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

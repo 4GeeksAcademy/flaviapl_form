@@ -8,3 +8,13 @@
     bottom: 20px;
     left: -8px;
 }
+#Textarea {
+    height: 80px;
+}
+
+#smallText {
+    font-size: 13px;
+}
+label {
+    font-weight: 600;
+}
